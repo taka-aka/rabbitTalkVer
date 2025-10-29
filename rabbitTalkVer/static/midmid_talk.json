@@ -1,0 +1,73 @@
+{
+    "low": [
+    {
+      "text": "......",
+      "img": "/static/img/usagi_normal.png",
+      "options": null
+    },
+    {
+      "text": "......",
+      "img": "/static/img/usagi_normal.png",
+      "options": null
+    },
+    {
+      "text": "...えへへ",
+      "img": "/static/img/usagi_tere.png",
+      "options": null
+    }
+    ],
+    "mid": [
+    {
+      "text": "きょうはおべんきょうするぞ～",
+      "img": "/static/img/usagi_study.png",
+      "options": null
+    },
+    {
+      "text": "このかんじは「いま」ってよんで...",
+      "img": "/static/img/usagi_study2.png",
+      "options": null
+    },
+    {
+      "text": "このかんじは「ひ」ってよむから...",
+      "img": "/static/img/usagi_study3.png",
+      "options": null
+    },
+    {
+      "text": "これで「いまひ」ってよむのかな？",
+      "img": "/static/img/usagi_study4.png",
+      "options": null
+    },
+    {
+      "text": "え？「きょう」？？？",
+      "img": "/static/img/usagi_what.png",
+      "options": null
+    },
+    {
+      "text": "...？？？",
+      "img": "/static/img/usagi_study5.png",
+      "options": null
+    }
+    ],
+    "high": [
+    {
+      "text": "ぼくおでかけもすきなんだ～！",
+      "img": "/static/img/usagi_outdoor.png",
+      "options": null
+    },
+    {
+      "text": "おさんぽってたのしいし、",
+      "img": "/static/img/usagi_howa.png",
+      "options": null
+    },
+    {
+      "text": "そとでたべるにんじんは、かくべつなんだよ～",
+      "img": "/static/img/usagi_tere.png",
+      "options": null
+    },
+    {
+      "text": "あなたにもたいけんしてほしいな～！",
+      "img": "/static/img/usagi_happy.png",
+      "options": null
+    }
+  ]
+}

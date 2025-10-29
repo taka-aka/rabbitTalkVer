@@ -1,0 +1,69 @@
+{
+  "low": [
+    {
+      "text": "きょうはおそうじするよ～",
+      "img": "/static/img/usagi_clean.png",
+      "options": null
+    },
+    {
+      "text": "おへやがきれいになると、うれしくなるよね",
+      "img": "/static/img/usagi_happy.png",
+      "options": null
+    },
+    {
+      "text": "あなたもよかったら、いっしょにやろ～！",
+      "img": "/static/img/usagi_clean.png",
+      "options": null
+    }
+  ],
+  "mid": [
+    {
+      "text": "あなた、ぼくのにんじんたべたでしょ！",
+      "img": "/static/img/usagi_angry.png",
+      "options": null
+    },
+    {
+      "text": "え？うしろ？",
+      "img": "/static/img/usagi_angry2.png",
+      "options": null
+    },
+    {
+      "text": "そんなあるわけ...",
+      "img": "/static/img/usagi_angry3.png",
+      "options": null
+    },
+    {
+      "text": "......",
+      "img": "/static/img/usagi_angry2.png",
+      "options": null
+    },
+    {
+      "text": "......",
+      "img": "/static/img/usagi_angry3.png",
+      "options": null
+    },
+    {
+      "text": "...ごめんなさい",
+      "img": "/static/img/usagi_cry.png",
+      "options": null
+    }
+  ],
+  "high": [
+    {
+      "text": "zzz...",
+      "img": "/static/img/usagi_sleep.png",
+      "options": null
+    },
+    {
+      "text": "...かにかま...",
+      "img": "/static/img/usagi_sleep.png",
+      "options": null
+    },
+    {
+      "text": "（（...どんな夢見てるのかな？））",
+      "img": "/static/img/usagi_sleep.png",
+      "options": null
+    }
+  ]
+}
+

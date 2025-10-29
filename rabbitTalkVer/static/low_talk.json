@@ -1,0 +1,59 @@
+{
+  "low": [
+    {
+      "text": "......",
+      "img": "/static/img/usagi_normal.png",
+      "options": null
+    },
+    {
+      "text": "......",
+      "img": "/static/img/usagi_normal.png",
+      "options": null
+    },
+    {
+      "text": "...きまずいね",
+      "img": "/static/img/usagi_what.png",
+      "options": null
+    }
+  ],
+  "mid": [
+    {
+      "text": "あ、じこしょうかいまだだったよね？",
+      "img": "/static/img/usagi_what.png",
+      "options": null
+    },
+    {
+      "text": "ぼく、うさぎです！",
+      "img": "/static/img/usagi_normal.png",
+      "options": null
+    },
+    {
+      "text": "すきなたべものは、にんじん！",
+      "img": "/static/img/usagi_welcome2.png",
+      "options": null
+    },
+    {
+      "text": "これからよろしくね、あなた！",
+      "img": "/static/img/usagi_welcome.png",
+      "options": null
+    }
+  ],
+  "high": [
+    {
+      "text": "あなた、きょうはもうリマインダーつくった？",
+      "img": "/static/img/usagi_what.png",
+      "options": null
+    },
+    {
+      "text": "つくってたら、おしらせするし、",
+      "img": "/static/img/usagi_good.png",
+      "options": null
+    },
+    {
+      "text": "つくってくれたら、カレンダーにとうろくするよ！",
+      "img": "/static/img/usagi_hozon.png",
+      "options": null
+    }
+  ]
+}
+

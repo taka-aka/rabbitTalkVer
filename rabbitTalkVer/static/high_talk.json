@@ -1,0 +1,69 @@
+{
+  "low": [
+    {
+      "text": "ぼくじつは、やきゅう”がちぜい”なんだよ！",
+      "img": "/static/img/usagi_play.png",
+      "options": null
+    },
+    {
+      "text": "しょうらいはやきゅうせんしゅになりたいんだ",
+      "img": "/static/img/usagi_howa.png",
+      "options": null
+    },
+    {
+      "text": "あなたのゆめはなに？",
+      "img": "/static/img/usagi_what.png",
+      "options": null
+    },
+    {
+      "text": "あなたのゆめも、かなうといいな",
+      "img": "/static/img/usagi_happy.png",
+      "options": null
+    }
+  ],
+  "mid": [
+    {
+      "text": "......",
+      "img": "/static/img/usagi_real.png",
+      "options": null
+    },
+    {
+      "text": "......",
+      "img": "/static/img/usagi_real2.png",
+      "options": null
+    },
+    {
+      "text": "......",
+      "img": "/static/img/usagi_real3.png",
+      "options": null
+    },
+    {
+      "text": "ぼくのおきにいりのぬいぐるみなんだ～",
+      "img": "/static/img/usagi_real4.png",
+      "options": null
+    }
+  ],
+  "high": [
+    {
+      "text": "あなた、きょうもおはなししてくれてありがとう！",
+      "img": "/static/img/usagi_happy.png",
+      "options": null
+    },
+    {
+      "text": "ぼく、あなただいすき！",
+      "img": "/static/img/usagi_love.png",
+      "options": null
+    },
+    {
+      "text": "えへへ...",
+      "img": "/static/img/usagi_tere.png",
+      "options": null
+    },
+    {
+      "text": "またあいにきてくれるとうれしいな",
+      "img": "/static/img/usagi_bey.png",
+      "options": null
+    }
+  ]
+}
+

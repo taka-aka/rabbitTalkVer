@@ -1,0 +1,27 @@
+{
+  "mid": [
+    {
+      "text": "...きまずいね",
+      "img": "/static/img/usagi_normal.png",
+      "options": null
+    }
+  ],
+  "high": [
+    {
+      "text": "ぼく、にんじんがだいすきなんだー",
+      "img": "/static/img/usagi_normal.png",
+      "options": null
+    },
+    {
+      "text": "おいしくてえいようもまんてんなんだよ！",
+      "img": "/static/img/usagi_happy.png",
+      "options": null
+    },
+    {
+      "text": "あなたも、にんじんすきならいいな",
+      "img": "/static/img/usagi_what.png",
+      "options": null
+    }
+  ]
+}
+

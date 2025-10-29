@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>うさぎカレンダー</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap JS（依存ライブラリ含む） -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/usagi_icon.png') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='rabbitSystem.js') }}"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+  <h1>
+  <span class="usagi-font">うさぎ</span><span class="calendar-font">カレンダー</span>
+  </h1>
+
+  <div class="app-container">
+    <!-- 左パネル -->
+<div class="left-panel">
+  <div id="rabbitMessage2" class="rabbit-message">{{ login_message if login_message else "（メッセージなし）" }}</div>
+  
+  <img id="clickimage" src="{{ login_img }}" alt="image of rabbit">
+  
+  <div id="rabbitMessage" class="rabbit-message"></div>
+  
+  <div class="login-streak-box">
+  <p>🎯 連続ログイン日数：<strong>{{ login_streak }}</strong> 日</p>
+  </div>
+
+  <div id="like-container">
+    <span id="like-label">うさぎの好感度：</span>
+    <span id="like-display">♡0</span>
+  </div>
+
+  <!-- ✅ 今日の予定をここに移動 -->
+  <div class="today-box">
+    <h2>今日の予定</h2>
+    <ul id="todayList"></ul>
+  </div>
+</div>
+    <!-- 右パネル -->
+    <div class="right-panel">
+      <!-- カレンダーのナビゲーション -->
+      <div class="calendar-nav">
+  <div class="prev-btn">
+    {% if month > 1 %}
+      <a class="btn btn-secondary" href="/?year={{ year }}&month={{ month - 1 }}">前月</a>
+    {% else %}
+      <a class="btn btn-secondary" href="/?year={{ year - 1 }}&month=12">前月</a>
+    {% endif %}
+  </div>
+
+  <h2 class="calendar-title">{{ year }}年 {{ month_name }}（{{ month }}月）</h2>
+
+  <div class="next-btn">
+    {% if month < 12 %}
+      <a class="btn btn-secondary" href="/?year={{ year }}&month={{ month + 1 }}">次月</a>
+    {% else %}
+      <a class="btn btn-secondary" href="/?year={{ year + 1 }}&month=1">次月</a>
+    {% endif %}
+  </div>
+</div>
+
+      <!-- カレンダーテーブル -->
+      <table class="table table-bordered text-center calendar-table">
+        <thead>
+          <tr>
+            <th class="text-danger">日</th>
+            <th>月</th>
+            <th>火</th>
+            <th>水</th>
+            <th>木</th>
+            <th>金</th>
+            <th class="text-primary">土</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for week in month_days %}
+            <tr>
+              {% for day in week %}
+                {% set i = loop.index0 %}
+                {% if day == 0 %}
+                  <td></td>
+                {% else %}
+                  <td
+                    class="{% if i == 0 %}text-danger{% elif i == 6 %}text-primary{% endif %}
+                           {% if today_cell == day %}today-cell{% endif %}"
+                    data-date="{{ year }}-{{ '%02d' % month }}-{{ '%02d' % day }}">
+                    <div><strong>{{ day }}</strong></div>
+                    <div class="reminder-list" id="reminders-{{ year }}-{{ '%02d' % month }}-{{ '%02d' % day }}">
+                      {% if reminders and reminders[day] %}
+                        {% for reminder in reminders[day] %}
+                          <div class="reminder-item" data-day="{{ day }}" data-time="{{ reminders.time }}" title="{{ reminder }}">
+                            {{ reminder[:20] }}{% if reminder|length > 20 %}…{% endif %}
+                          </div>
+                        {% endfor %}
+                      {% endif %}
+                    </div>
+                  </td>
+                {% endif %}
+              {% endfor %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- モーダル：リマインダー編集・追加 -->
+  <div class="modal-bg" id="reminderModal">
+    <div class="modal-content">
+      <h4 id="modalTitle">リマインダーを追加</h4>
+      <input type="time" id="reminderTime" placeholder="HH:MM"><br>
+      <textarea id="reminderText" rows="3" maxlength="100" placeholder="リマインダー内容（最大100文字）"></textarea>
+      <div class="d-flex justify-content-end gap-2">
+        <button class="btn btn-danger" id="deleteReminderBtn">削除</button>
+        <button class="btn btn-secondary" id="cancelBtn">キャンセル</button>
+        <button class="btn btn-primary" id="saveBtn">保存</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 好感度モーダル -->
+<div class="modal fade" id="likeModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">🎉お知らせ🎉</h5>
+      </div>
+      <div class="modal-body" id="modalText" style="white-space: pre-line;">
+        <p id="likeMessage"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!--たかしま追加部分-->
+
+<div id="nameModal" class="modal">
+  <div class="modal-content">
+    <h2>はじめまして！</h2>
+    <p>あなたの名前を教えてね（ひらがなのみ）🐇</p>
+    <input type="text" id="nameInput" placeholder="名前を入力">
+    <button id="saveNameBtn">OK</button>
+  </div>
+</div>
+
+<a id="changeNameBtn" class="btn btn-primary">名前を変更する</a>
+
+<!-- 吹き出しアイコン -->
+<a id="talkBtn" class="btn btn-primary">おはなしする</a>
+
+<!-- Talkモーダル -->
+<div id="talkModal" class="modal hidden">
+  <div class="modal-content">
+    <img src="" alt="うさぎ" id="usagi-img" />
+    <div id="talkMessage" class="talk-message"></div>
+    <div id="talkOptions" class="talk-options"></div>
+    <a id="closeTalkBtn" class="btn btn-primary">TAP</a>
+  </div>
+</div>
+</body>
+</html>
